@@ -23,11 +23,15 @@ program
 
 var questionsFilted = []
 
-questions.forEach((question) => {
-  if (!program.no[question.name] || question.name === 'type') {
-    questionsFilted.push(question)
-  }
-})
+if (program.no) {
+  questions.forEach((question) => {
+    if (!program.no[question.name] || question.name === 'type') {
+      questionsFilted.push(question)
+    }
+  })
+} else {
+  questionsFilted = questions
+}
 
 inquirer.prompt(questionsFilted).then((res) => {
 
@@ -63,6 +67,6 @@ inquirer.prompt(questionsFilted).then((res) => {
 
   if (res.pushRightNow) {
     console.log(chalk.green('\nPush Push Push ... \n'))
-    // exec('git push')
+    exec('git push')
   }
 })
