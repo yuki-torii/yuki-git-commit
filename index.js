@@ -47,6 +47,8 @@ inquirer.prompt(questionsFilted).then((res) => {
     commitMessage = `${title}`
   }
 
+  console.log(commitMessage)
+
   if (res.addAllFiles) {
     exec('git add --all')
   }
@@ -55,6 +57,6 @@ inquirer.prompt(questionsFilted).then((res) => {
 
   if (res.pushRightNow) {
     console.log(chalk.green('\nPush Push Push ... \n'))
-    exec('git push')
+    // exec('git push')
   }
 })
