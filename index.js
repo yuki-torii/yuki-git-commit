@@ -24,20 +24,16 @@ inquirer.prompt(questions).then((res) => {
   console.log('\n')
   console.table(res)
 
-  const commitMessage = `${res.messageTitle}\n${res.messageContent}`
+  const commitMessage = `${res.commitType} - ${res.messageTitle}\n${res.messageContent}`
 
   if (res.addAllFiles) {
     exec('git add --all')
   }
 
-  console.log(`git commit -m ${commitMessage}`)
   exec(`git commit -m "${commitMessage}"`)
 
   if (res.pushRightNow) {
-    const spinner = ora('Push Push Push ... ').start()
-
-    exec('git push', () => {
-      spinner.stop()
-    })
+    console.log('\nPush Push Push ... \n')
+    exec('git push')
   }
 })

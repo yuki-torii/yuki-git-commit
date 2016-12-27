@@ -13,7 +13,8 @@ module.exports = [{
     'Improving performance',
     'Fixing a bug',
     'Removing code or files',
-    'Improving structure / format of the code',
+    'Improving structure',
+    'format of the code',
     'Critical hotfix'
   ],
   default: 0
