@@ -42,9 +42,9 @@ inquirer.prompt(questionsFilted).then((res) => {
   let commitMessage = ''
 
   if (content) {
-    commitMessage = `${res.title}\n${res.content}`
+    commitMessage = `${title}\n${content}`
   } else {
-    commitMessage = `${res.title}`
+    commitMessage = `${title}`
   }
 
   if (res.addAllFiles) {
