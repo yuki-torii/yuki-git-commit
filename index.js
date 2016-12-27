@@ -4,7 +4,6 @@ const chalk = require('chalk')
 const figlet = require('figlet')
 const program = require('commander')
 const questions = require('./questions')
-const spawn = require('child_process').spawn
 const ora = require('ora')
 require('shelljs/global')
 require('console.table')
@@ -17,7 +16,7 @@ console.log(
 
 program
   .version('0.0.1')
-  .option('-p, --no-content', 'No content')
+  .option('-nc, --no-content', 'No content')
   .parse(process.argv)
 
 inquirer.prompt(questions).then((res) => {
