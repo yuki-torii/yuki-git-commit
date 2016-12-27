@@ -36,10 +36,16 @@ inquirer.prompt(questionsFilted).then((res) => {
     console.table(res)
   }
 
-  res.title = `${res.type.split('-')[0]} - ${res.title}` || res.type
-  res.content = res.content || ''
+  const title = `${res.type.split('-')[0]} - ${res.title}` || res.type
+  const content = res.content
 
-  const commitMessage = `${res.title}\n${res.content}`
+  let commitMessage = ''
+
+  if (content) {
+    commitMessage = `${res.title}\n${res.content}`
+  } else {
+    commitMessage = `${res.title}`
+  }
 
   if (res.addAllFiles) {
     exec('git add --all')
