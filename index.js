@@ -1,18 +1,10 @@
 #!/usr/bin/env node
 const inquirer = require('inquirer')
 const chalk = require('chalk')
-const figlet = require('figlet')
 const program = require('commander')
 const questions = require('./questions')
-const ora = require('ora')
 require('shelljs/global')
 require('console.table')
-
-console.log(
-  chalk.green(
-    figlet.textSync('Yuki Git Commit', { horizontalLayout: 'full' })
-  )
-)
 
 program
   .version('0.0.1')
@@ -32,7 +24,7 @@ inquirer.prompt(questions).then((res) => {
   exec(`git commit -m "${commitMessage}"`)
 
   if (res.pushRightNow) {
-    console.log('\nPush Push Push ... \n')
+    console.log(chalk.green('\nPush Push Push ... \n'))
     exec('git push')
   }
 })
