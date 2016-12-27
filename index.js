@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const clear = require('clear')
 const inquirer = require('inquirer')
 const chalk = require('chalk')
@@ -10,7 +12,7 @@ require('console.table')
 
 console.log(
   chalk.green(
-    figlet.textSync('YukiGitCommit', { horizontalLayout: 'full' })
+    figlet.textSync('Yuki Git Commit', { horizontalLayout: 'full' })
   )
 )
 
