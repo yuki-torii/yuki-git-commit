@@ -24,7 +24,7 @@ program
 var questionsFilted = []
 
 questions.forEach((question) => {
-  if (!program.no[question.name]) {
+  if (!program.no[question.name] && question.name !== 'type') {
     questionsFilted.push(question)
   }
 })
@@ -36,20 +36,22 @@ inquirer.prompt(questionsFilted).then((res) => {
     console.table(res)
   }
 
-  console.log(res)
-
-  const title = `${res.type.split('-')[0]} - ${res.title}` || res.type
+  const title = res.title
   const content = res.content
 
   let commitMessage = ''
 
-  if (content) {
-    commitMessage = `${title}\n${content}`
+  if (content && title) {
+    commitMessage = `${res.type.split('-')[0]} - ${title}\n${content}`
+  } else if (content) {
+    commitMessage = `${res.type}\n${res.content}`
+  } else if (title) {
+    commitMessage = `${res.type.split('-')[0]} - ${title}`
   } else {
-    commitMessage = `${title}`
+    commitMessage = res.type
   }
 
-  console.log(commitMessage)
+  console.log('commitMessage',commitMessage)
 
   if (res.addAllFiles) {
     exec('git add --all')
