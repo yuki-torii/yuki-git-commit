@@ -24,7 +24,9 @@ inquirer.prompt(questions).then((res) => {
   console.log('\n')
   console.table(res)
 
-  console.log(`${res.messageTitle}\n${res.messageContent}`)
+  const commitMessage = `${res.messageTitle}\n${res.messageContent}`
+
+  exec(`git commit -m ${commitMessage}`)
 
   if (res.addAllFiles) {
     exec('git add --all')
