@@ -24,7 +24,7 @@ program
 var questionsFilted = []
 
 questions.forEach((question) => {
-  if (!program.no[question.name] && question.name !== 'type') {
+  if (!program.no[question.name] || question.name === 'type') {
     questionsFilted.push(question)
   }
 })
