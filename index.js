@@ -36,6 +36,8 @@ inquirer.prompt(questionsFilted).then((res) => {
     console.table(res)
   }
 
+  console.log(res.type)
+
   const title = res.title
   const content = res.content
 
