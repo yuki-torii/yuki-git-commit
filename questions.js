@@ -4,7 +4,7 @@ module.exports = [{
   message: 'Add all files ?',
   default: true
 }, {
-  name: 'commitType',
+  name: 'type',
   type: 'list',
   message: 'Select your type',
   choices: [
@@ -48,12 +48,12 @@ module.exports = [{
   ],
   default: 0
 }, {
-  name: 'messageTitle',
+  name: 'title',
   type: 'input',
   message: 'Git commit message title :',
   default: 'update'
 }, {
-  name: 'messageContent',
+  name: 'content',
   type: 'input',
   message: 'Git commit message content:',
   default: 'update'
