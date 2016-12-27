@@ -26,11 +26,12 @@ inquirer.prompt(questions).then((res) => {
 
   const commitMessage = `${res.messageTitle}\n${res.messageContent}`
 
-  exec(`git commit -m ${commitMessage}`)
-
   if (res.addAllFiles) {
     exec('git add --all')
   }
+
+  console.log(`git commit -m ${commitMessage}`)
+  exec(`git commit -m "${commitMessage}"`)
 
   if (res.pushRightNow) {
     const spinner = ora('Push Push Push ... ').start()
