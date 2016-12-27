@@ -36,6 +36,8 @@ inquirer.prompt(questionsFilted).then((res) => {
     console.table(res)
   }
 
+  console.log(res)
+
   const title = `${res.type.split('-')[0]} - ${res.title}` || res.type
   const content = res.content
 
