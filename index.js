@@ -40,8 +40,6 @@ inquirer.prompt(questionsFilted).then((res) => {
     console.table(res)
   }
 
-  console.log(res)
-
   const title = res.title
   const content = res.content
 
@@ -56,8 +54,6 @@ inquirer.prompt(questionsFilted).then((res) => {
   } else {
     commitMessage = res.type
   }
-
-  console.log('commitMessage',commitMessage)
 
   if (res.addAllFiles) {
     exec('git add --all')
