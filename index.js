@@ -65,4 +65,6 @@ inquirer.prompt(questionsFilted).then((res) => {
     console.log(chalk.green('\nPush Push Push ... \n'))
     exec('git push')
   }
+
+  process.exitCode = 0
 })
