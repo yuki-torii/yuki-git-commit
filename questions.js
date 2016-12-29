@@ -55,7 +55,7 @@ module.exports = [{
 }, {
   name: 'content',
   type: 'input',
-  message: 'Git commit message content:',
+  message: 'Git commit message content :',
   default: 'update'
 }, {
   name: 'pushRightNow',
