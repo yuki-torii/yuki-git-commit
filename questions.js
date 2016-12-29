@@ -38,7 +38,7 @@ module.exports = [{
     // '🔧  - Changing configuration files.',
     // '🌐  - Internationalization and localization.',
     // '✏️  - Fixing typos.',
-    // '💩  - Writing bad code that needs to be improved.',
+    '💩  - Writing bad code that needs to be improved.',
     // '⏪  - Reverting changes.',
     // '🔀  - Merging branches.',
     // '📦  - Updating compiled files or packages.',
