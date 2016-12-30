@@ -28,7 +28,7 @@ module.exports = [{
     // '🚨  - Removing linter warnings.',
     // '💚  - Fixing CI Build.',
     // '⬇️  - Downgrading dependencies.',
-    // '⬆️  - Upgrading dependencies.',
+    '⬆️  - Upgrading dependencies.',
     // '👷  - Adding CI build system.',
     // '📈  - Adding analytics or tracking code.',
     // '🔨  - Heavy refactoring.',
