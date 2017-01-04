@@ -40,8 +40,7 @@ inquirer.prompt(questionsFilted).then((res) => {
     console.table(res)
   }
 
-  const title = res.title
-  const content = res.content
+  const { title, content } = res
 
   let commitMessage = ''
 
