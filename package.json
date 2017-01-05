@@ -7,7 +7,7 @@
     "ygc": "./index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,8 @@
     "console.table": "^0.8.0",
     "inquirer": "^2.0.0",
     "shelljs": "^0.7.5"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0"
   }
 }
