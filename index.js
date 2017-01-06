@@ -17,7 +17,7 @@ function optionslist(val) {
 
 program
   .version(package.version)
-  .option('-n, --no <items>', 'No <items>', optionslist)
+  .option('-n, --no <items>', 'no <items>', optionslist)
   .option('-t, --show-info-table', 'Show options infomation table')
   .parse(process.argv)
 
