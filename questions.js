@@ -62,4 +62,4 @@ module.exports = [{
   type: 'confirm',
   message: 'Push right now ?',
   default: true
-}];
+}]
