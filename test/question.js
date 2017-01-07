@@ -1,6 +1,6 @@
 import test from 'ava'
-import questions from '../questions'
+import prompts from '../prompts'
 
-test('questions is array', t => {
-  t.is(questions.length > 0, true)
+test('prompts is array', t => {
+  t.is(prompts.length > 0, true)
 })

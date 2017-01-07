@@ -1,13 +1,15 @@
 #!/usr/bin/env node
+
+/* global exec */
+
 const inquirer = require('inquirer')
 const chalk = require('chalk')
 const program = require('commander')
 const prompts = require('./prompts')
-const package = require('./package.json')
 require('shelljs/global')
 require('console.table')
 
-function optionslist(val) {
+function optionslist (val) {
   var options = {}
   val.split(',').forEach((item) => {
     options[item] = true
@@ -16,7 +18,7 @@ function optionslist(val) {
 }
 
 program
-  .version(package.version)
+  .version(require('./package').version)
   .option('-n, --no <items>', 'no <items>', optionslist)
   .option('-t, --show-info-table', 'Show options infomation table')
   .parse(process.argv)
@@ -34,7 +36,6 @@ if (program.no) {
 }
 
 inquirer.prompt(promptsFilted).then((res) => {
-
   if (program.showInfoTable) {
     console.log('\n')
     console.table(res)
