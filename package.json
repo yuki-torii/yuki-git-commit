@@ -2,9 +2,9 @@
   "name": "yuki-git-commit",
   "version": "0.1.1",
   "description": "commit friendly",
-  "main": "index.js",
+  "main": "./bin/index.js",
   "bin": {
-    "ygc": "./index.js"
+    "ygc": "./bin/index.js"
   },
   "scripts": {
     "test": "npm run lint && ava",

@@ -5,7 +5,7 @@
 const inquirer = require('inquirer')
 const chalk = require('chalk')
 const program = require('commander')
-const prompts = require('./prompts')
+const prompts = require('../lib/prompts')
 require('shelljs/global')
 require('console.table')
 
@@ -18,7 +18,7 @@ function optionslist (val) {
 }
 
 program
-  .version(require('./package').version)
+  .version(require('../package').version)
   .option('-n, --no <items>', 'no <items>', optionslist)
   .option('-t, --show-info-table', 'Show options infomation table')
   .parse(process.argv)
