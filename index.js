@@ -2,7 +2,7 @@
 const inquirer = require('inquirer')
 const chalk = require('chalk')
 const program = require('commander')
-const questions = require('./questions')
+const prompts = require('./prompts')
 const package = require('./package.json')
 require('shelljs/global')
 require('console.table')
@@ -21,19 +21,19 @@ program
   .option('-t, --show-info-table', 'Show options infomation table')
   .parse(process.argv)
 
-var questionsFilted = []
+var promptsFilted = []
 
 if (program.no) {
-  questions.forEach((question) => {
-    if (!program.no[question.name] || question.name === 'type') {
-      questionsFilted.push(question)
+  prompts.forEach((prompt) => {
+    if (!program.no[prompt.name] || prompt.name === 'type') {
+      promptsFilted.push(prompt)
     }
   })
 } else {
-  questionsFilted = questions
+  promptsFilted = prompts
 }
 
-inquirer.prompt(questionsFilted).then((res) => {
+inquirer.prompt(promptsFilted).then((res) => {
 
   if (program.showInfoTable) {
     console.log('\n')
