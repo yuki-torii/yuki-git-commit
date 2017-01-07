@@ -8,6 +8,7 @@ sudo: false
 
 before_script:
   - npm install -g eslint
+  - npm install -g eslint-config-standard
 
 cache:
   directories:
