@@ -37,7 +37,7 @@ $ ygc -n title,content
 
 ## Interactive UI
 <p align="center">
-  <img src="ss.png" />
+  <img src="//raw.githubusercontent.com/limichange/yuki-git-commit/master/ss.png" />
 </p>
 
 ## License
